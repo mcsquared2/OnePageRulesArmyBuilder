@@ -1,1 +1,2 @@
-FormHelper.PopulateSelectIfExists("#unit-faction-select", DAL.GetFactions());
+var faction = DAl.GetFaction("battleBrothersId");
+
