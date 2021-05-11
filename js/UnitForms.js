@@ -1,2 +1,4 @@
-var faction = DAl.GetFaction("battleBrothersId");
+var faction = DAl.GetFaction("battleSistersId");
+
+
 
