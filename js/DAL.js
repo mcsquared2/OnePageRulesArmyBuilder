@@ -10,5 +10,8 @@ DAL = {
             return SPECIAL_RULES;
         }
         return SPECIAL_RULES.concat(GetFaction(factionId).specialRules);
+    }, 
+    GetWeapons: function() {
+        return WEAPONS;
     }
 }
