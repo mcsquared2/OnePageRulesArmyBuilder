@@ -8,13 +8,14 @@ FACTIONS = {
             blindFaith: {
                 id: "blindFaithId",
                 name: "Blind Faith",
-                description: "When the hero and her unit are activated pick one of the following devotions, and they get one of these special rules until the end of the round:[subdescription]",
-                subdescriptions: [
-                    { name: "Passion", value: '+3” when moving'},
-                    { name: "Guidance", value: 'AP(+1) when shooting'},
-                    { name: "Spirit", value: 'AP(+1) when in melee'},
-                    { name: "Aegis", value: 'enemies get -1 to melee hits'},
-                ]
+                description: "When the hero and her unit are activated pick one of the following devotions, and they get one of these special rules until the end of the round:<br>&bull; <strong>Passion</strong>: +3\" when moving<br>&bull; <strong>Guidance</strong>: AP(+1) when shooting.<br>&bull; <strong>Spirit</strong>: AP(+1) when in melee.<br>&bull; <strong>Aegis</strong>: enemies get -1 to melee hits"
+                // description: "When the hero and her unit are activated pick one of the following devotions, and they get one of these special rules until the end of the round:[subdescription]",
+                // subdescriptions: [
+                //     { name: "Passion", value: '+3” when moving'},
+                //     { name: "Guidance", value: 'AP(+1) when shooting'},
+                //     { name: "Spirit", value: 'AP(+1) when in melee'},
+                //     { name: "Aegis", value: 'enemies get -1 to melee hits'},
+                // ]
             },
             canticleMegaphone: {
                 id: "canticleMegaphoneId",
