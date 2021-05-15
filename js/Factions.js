@@ -30,12 +30,30 @@ bgToggle.click( () => {
     if (bgShowing){
         bgToggle.append("Show");
         bgDisplay.hide();
-        bgShowing=false;
     } else {
         bgToggle.append("Hide");
         bgDisplay.show();
-        bgShowing=true;
     }
+    bgShowing = !bgShowing;
+})
+
+
+function ToggleUnitType(isLight) {
+    $(".unit-type-descriptor").each(function(element) {
+        $(this).empty();
+        if (isLight) {
+            $(this).append("Light");
+        } else {
+            $(this).append("Heavy");
+        }
+    })
+}
+
+$("#unit-type-light-btn").click(() => {
+    ToggleUnitType(true);
+})
+$("#unit-type-heavy-btn").click(() => {
+    ToggleUnitType(false);
 })
 
 
