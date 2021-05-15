@@ -2,52 +2,8 @@ FACTIONS = {
     battleSistersId: { 
         val: "battle-sisters", 
         display: "Battle Sisters", 
-        upgradeTables: 
-        [
-            { 
-                val:"a", 
-                upgrades:
-                [
-                    {
-                        action: "replace",
-                        replace: ["assaultRifle", "ccw"],
-                        range:1, 
-                        cost:0, 
-                        isWeapon:true, 
-                        value:["pistol", "ccw2"]
-                    },
-                    {
-                        action: "replace",
-                        replace:["assaultRifle", "ccw"], 
-                        range:1, 
-                        cost:10, 
-                        isWeapon:true, 
-                        value:["heavyChainsawSword"]
-                    }
-                ], 
-            }, 
-            { 
-                val:"b", 
-                upgrades:
-                [
-                    {
-                        action: "add", 
-                        range:-1, 
-                        cost: 45, 
-                        isWeapon:false, 
-                        value:"powerShields"
-                    },
-                    {
-                        action: "add",
-                        range: -1,
-                        cost: 5,
-                        isWeapon: false,
-                        value: ["blindFaith"]
-                    }
-                    
-                ], 
-            }
-        ],
+        upgradeTables: {},
+        units: {},
         specialRules: {
             blindFaith: {
                 id: "blindFaithId",
@@ -95,6 +51,7 @@ WEAPONS = {
 
 SPECIAL_RULES = {
     fast: {
+        name: "Fast",
         description: "Allows this unit to assault with a 9 inch movement and charge with 18 inch movement",
     },
     fearless: {

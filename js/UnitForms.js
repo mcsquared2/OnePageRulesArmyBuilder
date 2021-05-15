@@ -34,4 +34,17 @@ function PopulateWeaponDisplay (elementId) {
     $(elementId).append(content);
 }
 
+function PopulateSpecialRulesDisplay (elementId, factionId="", includeGeneral=false) {
+    
+    content = ``;
+    rules = DAL.GetSpecialRules(factionId, includeGeneral);
+    Object.entries( rules ).forEach( ([key, rule]) => {
+        content += `<div><input type="checkbox" value=${key}> ${rule.name}</div>`;
+    });
+    $(elementId).empty();
+    $(elementId).append(content);
+}
+
 PopulateWeaponDisplay("#unit-weapon-display");
+PopulateSpecialRulesDisplay("#unit-general-special-rules-display");
+PopulateSpecialRulesDisplay("#unit-faction-special-rules-display", "battleSistersId");

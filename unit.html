@@ -1,0 +1,106 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>One Page Rules Army Builder</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+
+    <form id="add-unit-form" class="pure-form pure-form-stacked centered-3-4">
+        <fieldset>
+            <legend>Legend</legend>
+            <div class="pure-g">
+                <!-- Row One -->                
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <label for="multi-first-name">Name</label>
+                    <input type="text" id="multi-first-name" class="pure-u-3-4" />
+                </div>
+                <div class="pure-u-1 pure-u-md-2-3"></div>
+
+                <!-- Row Two -->
+                <div class="pure-u-1 pure-u-md-1-24">
+                    <label for="multi-city">Size</label>
+                    <input type="Number" id="multi-city" class="pure-u-23-24" />
+                </div>
+                <div class="pure-u-1 pure-u-md-1-24"></div>
+
+                <div class="pure-u-1 pure-u-md-1-24">
+                    <label for="multi-last-name">Qa</label>
+                    <input type="number" id="multi-last-name" class="pure-u-23-24" />
+                </div>
+                <div class="pure-u-1 pure-u-md-1-24"></div>
+
+                <div class="pure-u-1 pure-u-md-1-24">
+                    <label for="multi-email">Def</label>
+                    <input type="number" id="multi-email" class="pure-u-23-24" required="" />
+                </div>
+                <div class="pure-u-1 pure-u-md-1-24"></div>
+                
+                <div class="pure-u-1 pure-u-md-1-24">
+                    <label for="unit-cost">Cost</label>
+                    <input type="Number" id="unit-cost" class="pure-u-23-24" />
+                </div>
+                <div class="pure-u-1 pure-u-md-17-24"></div>
+
+                <!-- Row Three -->
+                <!-- change to check boxes -->
+                <div class="pure-u-1 pure-u-md-11-24">
+                    <label for="unit-weapon-select">Weapons</label>
+                    <hr>
+                    <div id="unit-weapon-display"></div>
+                </div>
+                <div class="pure-u-md-1-12"></div>
+
+                <div class="pure-u-1 pure-u-md-11-24">
+                    <label for="unit-special-rules-display">Special Rules</label>
+                    <hr>
+                    <div class="pure-u-1-3">
+                        <h4>General</h4>
+                        <div id="unit-general-special-rules-display"></div>
+                    </div>
+                    <div class="pure-u-1-3">
+                        <h4>Faction</h4>
+                        <div id="unit-faction-special-rules-display"></div>
+                    </div>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="pure-u-1 pure-u-md-1">
+                    <label for="unit-upgrades">Upgrade Tables</label>
+                    <hr>
+                    <div id="unit-upgrades-display"></div>
+                </div>
+                
+            </div>
+            
+        </fieldset>
+    </form>
+
+    <!-- <form class="pure-form">
+        <fieldset>
+            <legend>A compact inline form</legend>
+            <input type="text" placeholder="name" />
+            <input type="password" placeholder="Password" />
+            <label for="default-remember">
+                <input type="checkbox" id="default-remember" /> Remember me</label>
+            <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+        </fieldset>
+    </form> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/FormHelper.js"></script>
+    <script src="js/DataStub.js"></script>
+    <script src="js/DAL.js"></script>
+    <script src="js/UnitForms.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -15,22 +15,31 @@
 </head>
 
 <body>
-    <div class="pure-g centered-3-4">
-        <div class="pure-u-1-2">
-            <h2>Factions</h2>
-            <div id="index-faction-display"></div>
-        </div>
-        <div class="pure-u-1-2">
-            <h2>Armies</h2>
-            <div id="index-army-display"></div>
+
+    <div class="centered-3-4 pure-g">
+        <h2 id="faction-name-display" class="pure-u-1"></h2>
+        <div class="pure-u-1">
+            <h3>Background</h3>
+            <div id="faction-background-display"></div>
+            <button id="faction-background-display-toggle-button"></button>
         </div>
     </div>
 
-    
+    <form id="add-unit-form" class="pure-form pure-form-stacked">
+        <fieldset>
+            
+                
+            <button id="faction-add-unit-btn">Add Unit</button>
+            
+        </fieldset>
+    </form>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="js/FormHelper.js"></script>
     <script src="js/DataStub.js"></script>
     <script src="js/DAL.js"></script>
+    <script src="QuerystringUtilities.js"></script>
+    <script src="js/FactionForms.js"></script>
     <script src="js/scripts.js"></script>
 </body>
 </html>
