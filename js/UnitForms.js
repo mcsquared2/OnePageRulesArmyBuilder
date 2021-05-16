@@ -1,4 +1,4 @@
-var faction = DAL.GetFaction("battleSistersId");
+var faction = DAL.GetFaction("battleSisters");
 
 // var selectUpgradeTablesContainer = $("#select-upgrade-tables-container");
 // faction.upgradeTables.forEach( (table) => {
@@ -47,4 +47,4 @@ function PopulateSpecialRulesDisplay (elementId, factionId="", includeGeneral=fa
 
 PopulateWeaponDisplay("#unit-weapon-display");
 PopulateSpecialRulesDisplay("#unit-general-special-rules-display");
-PopulateSpecialRulesDisplay("#unit-faction-special-rules-display", "battleSistersId");
+PopulateSpecialRulesDisplay("#unit-faction-special-rules-display", "battleSisters");

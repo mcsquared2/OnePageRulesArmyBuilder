@@ -15,5 +15,14 @@ DAL = {
     }, 
     GetWeapons: function() {
         return WEAPONS;
+    },
+    GetUnits: function (faction) {
+        units = {},
+        Object.entries(UNITS).forEach(([unitId, unit]) => {
+            if (unit.faction == faction) {
+                units[key] = unit;
+            }
+        })
+        return units;
     }
 }
