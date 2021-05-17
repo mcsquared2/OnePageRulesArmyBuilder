@@ -5,13 +5,14 @@ DAL = {
     GetFaction: function(factionId) {
         return FACTIONS[factionId];
     },
-    GetSpecialRules: function(factionId="", includeGeneral=false) {
-        if (factionId == ""){
-            return SPECIAL_RULES;
-        } else if (!includeGeneral){
-            return FACTIONS[factionId].specialRules;
-        }
-        return SPECIAL_RULES.concat(GetFaction(factionId).specialRules);
+    GetSpecialRules: function(factionId="general") {
+        rules = {};
+        Object.entries(SPECIAL_RULES).forEach(([key, rule]) => {
+            if (rule.faction == factionId) {
+                rules[key] = rule;
+            }
+        })
+        return rules;
     }, 
     GetWeapons: function() {
         return WEAPONS;
@@ -20,9 +21,10 @@ DAL = {
         units = {},
         Object.entries(UNITS).forEach(([unitId, unit]) => {
             if (unit.faction == faction) {
-                units[key] = unit;
+                units[unitId] = unit;
             }
         })
+        console.log(units);
         return units;
     }
 }

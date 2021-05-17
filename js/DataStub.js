@@ -76,6 +76,7 @@ UPGRADE_TABLES = {
 UNITS= {
     greaterHighSister: {
         faction: "battleSisters",
+        type: "light",
         display: "Greater High Sister",
         size: 1,
         qua: 2,
@@ -87,6 +88,7 @@ UNITS= {
     },
     battleSisters: {
         faction: `battleSisters`,
+        type: "light",
         display: `Battle Sisters`,
         size: 5,
         qua: 4,
@@ -106,6 +108,19 @@ UNITS= {
         keywords: [`badShot`, `furious`],
         upgrades: [`a`, `c`, `j`, `k`],
         cost: 155,
+    },
+    organTank: {
+        faction: "battleSisters",
+        type: "heavy",
+        display: "Organ Tank",
+        size: 1,
+        qua: 4,
+        def: 2,
+        equipment: ["organMortar"],
+        keywords: ["fast", "impact[6]", "tough[12]"],
+        upgrades: ["a", "c"],
+        cost: 340,
+
     }
 },
 

@@ -1,42 +1,73 @@
 faction = DAL.GetFaction(PARAMS.get("factionId"));
 
+function _getUnitRow(unit){
+    row = `<tr><td>${unit.display}</td><td>${unit.size}</td><td>${unit.qua}</td><td>${unit.def}</td><td></td><td></td><td></td><td>${unit.cost}</td></tr>`;
+    return row;
+}
+
 function PopulateSpecialRulesDisplay(elementId) {
     content = ``;
-    Object.entries(faction.specialRules).forEach(([key, rule]) => {
-        content += `<div><h4>${rule.name}</h4><p>${rule.description}</p>`;
+    Object.entries(DAL.GetSpecialRules(`battleSisters`)).forEach(([key, rule]) => {
+        content += `<div class="pure-u-1-5"><h4>${rule.name}</h4><p>${rule.description}</p></div>`;
     });
     $(elementId).empty();
     $(elementId).append(content);
 }
 
-function PopulateFactionDisplay() {
-    console.log(faction.display);
-    $("#faction-name-display").append(faction.display);
-    PopulateSpecialRulesDisplay("#faction-special-rules-display")
+function PopulateUnitDisplay() {
+    lightContent = `<table class="pure-table"><tr><th>Name</th><th>Size</th><th>Qua</th><th>Def</th><th>Equipment</th><th>Special Rules</th><th>Upgrades</th><th>Cost</th>`;
+    heavyContent = lightContent;
+    Object.entries(DAL.GetUnits(`battleSisters`)).forEach(([key, unit]) => {
+        if (unit.type == `light`) {
+            lightContent += _getUnitRow(unit);
+        } else if (unit.type == `heavy`) {
+            heavyContent += _getUnitRow(unit);
+        }
+    });
+    lightContent += `</table>`;
+    heavyContent += `</table>`;
+    $("#faction-unit-display-light").empty();
+    $("#faction-unit-display-light").append(lightContent);
+    $("#faction-unit-display-heavy").empty();
+    $("#faction-unit-display-heavy").append(heavyContent);
 
 }
+
+function PopulateFactionDisplay() {
+    $("#faction-name-display").append(faction.display);
+    PopulateSpecialRulesDisplay("#faction-special-rules-display");
+    PopulateUnitDisplay();
+
+}
+
 
 
 $("#faction-add-unit-btn").click(() => {
     
 })
 
-bgToggle = $("#faction-background-toggle-btn");
-bgDisplay = $("#faction-background-display");
-bgDisplay.hide();
-bgShowing = false;
-bgToggle.click( () => {
-    bgToggle.empty();
-    if (bgShowing){
-        bgToggle.append("Show");
-        bgDisplay.hide();
+function toggleArea(toggleElementId, areaElementId) {
+    $(areaElementId).toggle("slow", function (){});
+    toggle = $(toggleElementId);
+    if (toggle.html() == "Show") {
+        toggle.empty();
+        toggle.append("Hide");
     } else {
-        bgToggle.append("Hide");
-        bgDisplay.show();
+        toggle.empty();
+        toggle.append("Show");
     }
-    bgShowing = !bgShowing;
+}
+
+$("#faction-background-toggle-btn").click( () => {
+    toggleArea("#faction-background-toggle-btn", "#faction-background-container");
+});
+
+$("#faction-special-rules-toggle-btn").click( () => {
+    toggleArea("#faction-special-rules-toggle-btn", "#faction-special-rules-container");
 })
 
+$("#faction-background-container").hide();
+$("#faction-special-rules-container").hide();
 
 function ToggleUnitType(isLight) {
     $(".unit-type-descriptor").each(function(element) {
