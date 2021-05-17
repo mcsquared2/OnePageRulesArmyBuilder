@@ -20,6 +20,10 @@ input[type=number] {
   margin: 10px auto;
 }
 
-.unit-display {
+.almost-full-table {
   width:96%;
+}
+
+table th {
+  text-align: left;
 }

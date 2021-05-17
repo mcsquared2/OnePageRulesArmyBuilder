@@ -35,7 +35,7 @@ function PopulateSpecialRulesDisplay(elementId) {
 
 function PopulateUnitDisplay() {
     lightContent = `
-        <table class="pure-table pure-table-striped unit-display">
+        <table class="pure-table pure-table-striped almost-full-table">
             <tr>
                 <th>Name</th>
                 <th>Size</th>
@@ -47,7 +47,7 @@ function PopulateUnitDisplay() {
                 <th>Cost</th>
     `;
     heavyContent = lightContent;
-    Object.entries(DAL.GetUnits(`battleSisters`)).forEach(([key, unit]) => {
+    Object.entries(DAL.GetUnits(faction.id)).forEach(([key, unit]) => {
         if (unit.type == `light`) {
             lightContent += _getUnitRow(unit);
         } else if (unit.type == `heavy`) {
@@ -63,18 +63,50 @@ function PopulateUnitDisplay() {
 
 }
 
+function PopulateUpgradesDisplay() {
+    lightContent = ``;
+    heavyContent = ``;
+    DAL.GetUpgradeTables(faction.id).forEach( (table) => {
+        console.log(table);
+        sectionContent = ``;
+        table.sections.forEach( (section) => {
+            sectionContent += `<tr><th colspan="2">${section.display}</th></tr>`
+            section.options.forEach( (option) => {
+                sectionContent += `<tr><td>${option.val.join(", ")}</td><td>${option.cost}</td></tr>`;
+            })
+        });
+        tableContent = `
+            <div>
+                <strong>${table.table}</strong>
+                <table class="pure-table pure-table-striped">
+                    ${sectionContent}
+                </table>
+            </div>
+        `;
+        if (table.type == "light") {
+            console.log("adding light table")
+            console.log(tableContent);
+            lightContent += tableContent;
+        } else {
+
+            console.log("adding heavy table")
+            console.log(tableContent);
+            heavyContent += tableContent;
+        }
+    })
+    $("#faction-upgrades-display-light").empty();
+    $("#faction-upgrades-display-light").append(lightContent);
+    $("#faction-upgrades-display-heavy").empty();
+    $("#faction-upgrades-display-heavy").append(heavyContent);
+}
+
 function PopulateFactionDisplay() {
     $("#faction-name-display").append(faction.display);
     PopulateSpecialRulesDisplay("#faction-special-rules-display");
     PopulateUnitDisplay();
+    PopulateUpgradesDisplay();
 
 }
-
-
-
-$("#faction-add-unit-btn").click(() => {
-    
-})
 
 function toggleArea(toggleElementId, areaElementId) {
     $(areaElementId).toggle("slow", function (){});
@@ -102,6 +134,8 @@ $("#faction-special-rules-container").hide();
 function ToggleUnitType(isLight) {
     $("#faction-unit-display-light").toggle();
     $("#faction-unit-display-heavy").toggle();
+    $("#faction-upgrades-display-light").toggle();
+    $("#faction-upgrades-display-heavy").toggle();
     $(".unit-type-descriptor").each(function(element) {
         $(this).empty();
         if (isLight) {
@@ -113,6 +147,7 @@ function ToggleUnitType(isLight) {
 }
 
 $("#faction-unit-display-heavy").hide();
+$("#faction-upgrades-display-heavy").hide();
 
 $("#unit-type-light-btn").click(() => {
     ToggleUnitType(true);

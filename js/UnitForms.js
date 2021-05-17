@@ -14,7 +14,6 @@ function PopulateWeaponDisplay (elementId) {
     content = `<table class="pure-table"><tr><th></th><th>Name</th><th>Range</th><th>Attacks</th><th>Keywords</th>`;
     Object.entries( DAL.GetWeapons() ).forEach( ([_, weapon]) => { 
         keywordContent = ``;
-        console.log(weapon);
 
         weapon.keywords.forEach( (keyword) => {
             

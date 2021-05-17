@@ -1,5 +1,6 @@
 FACTIONS = {
-    battleSisters: { 
+    battleSisters: {
+        id: `battleSisters`, 
         val: "battle-sisters", 
         display: "Battle Sisters", 
     },
@@ -14,6 +15,7 @@ PSYCHIC_SPELLS = {
 
 UPGRADE_TABLES = {
     orcMaraudersA : {
+        type: 'light',
         faction: `orcMarauders`,
         table: `a`,
         sections: [
@@ -48,14 +50,15 @@ UPGRADE_TABLES = {
             }
         ]
     },
-    battleSistersA: {
+    battleSistersLightA: {
+        type: `light`,
         faction:`battleSisters`,
         table: `a`,
         sections: [
             {
                 action: `replace`,
                 targets: [`assaultRifle`, `ccw`],
-                range: 1,
+                display: `Replace one Assault Rifle and CCW:`,
                 options: [
                     {
                         type: `weapon`,
@@ -69,8 +72,49 @@ UPGRADE_TABLES = {
                     }
                 ]
             },
+            {
+                action: `add`,
+                targets: [`pistol`],
+                display: `Upgrade with:`,
+                options: [
+                    {
+                        type: `rule`,
+                        val: [`holyAntiGravPulpit`],
+                        cost:145
+                    },
+                    {
+                        type: `rule`,
+                        val: [`blindFaith`],
+                        cost: 15,
+                    },
+                    {
+                        type: `rule`,
+                        val: [`fear`, `fearlessness`],
+                        cost: 30,
+                    }
+                ]
+            }
         ]
-    }
+    },
+    battleSistersHeavyA: {
+        type: `heavy`,
+        faction:`battleSisters`,
+        table: `e`,
+        sections: [
+            {
+                action: `replace`,
+                targets: [`heavyFlamethrower`],
+                display: `Replace any Heavy Flamethrower:`,
+                options: [
+                    {
+                        type: `weapon`,
+                        val: [`heavyMachineGun`],
+                        cost: 10,
+                    },
+                ]
+            }
+        ]
+    },
 }
 
 UNITS= {

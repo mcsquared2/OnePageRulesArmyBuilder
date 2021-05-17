@@ -24,7 +24,15 @@ DAL = {
                 units[unitId] = unit;
             }
         })
-        console.log(units);
         return units;
+    },
+    GetUpgradeTables: function (factionId) {
+        tables = [];
+        Object.entries(UPGRADE_TABLES).forEach(([key, table]) => {
+            if (table.faction == factionId) {
+                tables.push(table);
+            }
+        });
+        return tables;
     }
 }
