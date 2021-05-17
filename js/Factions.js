@@ -1,7 +1,26 @@
 faction = DAL.GetFaction(PARAMS.get("factionId"));
 
 function _getUnitRow(unit){
-    row = `<tr><td>${unit.display}</td><td>${unit.size}</td><td>${unit.qua}</td><td>${unit.def}</td><td></td><td></td><td></td><td>${unit.cost}</td></tr>`;
+    equipmentContent = ``;
+    unit.equipment.forEach( (item) => {
+        equipmentContent += `<div>${item}</div>`;
+    })
+    specialRulesContent = ``;
+    unit.specialRules.forEach((rule) => {
+        specialRulesContent += `<div>${rule}</div>`;
+    })
+    upgradesContent = unit.upgrades.join(", ");
+    row = `
+        <tr>
+            <td>${unit.display}</td>
+            <td>${unit.size}</td>
+            <td>${unit.qua}</td>
+            <td>${unit.def}</td>
+            <td>${equipmentContent}</td>
+            <td>${specialRulesContent}</td>
+            <td>${upgradesContent}</td>
+            <td>${unit.cost}</td>
+        </tr>`;
     return row;
 }
 
@@ -15,7 +34,18 @@ function PopulateSpecialRulesDisplay(elementId) {
 }
 
 function PopulateUnitDisplay() {
-    lightContent = `<table class="pure-table"><tr><th>Name</th><th>Size</th><th>Qua</th><th>Def</th><th>Equipment</th><th>Special Rules</th><th>Upgrades</th><th>Cost</th>`;
+    lightContent = `
+        <table class="pure-table pure-table-striped unit-display">
+            <tr>
+                <th>Name</th>
+                <th>Size</th>
+                <th>Qua</th>
+                <th>Def</th>
+                <th>Equipment</th>
+                <th>Special Rules</th>
+                <th>Upgrades</th>
+                <th>Cost</th>
+    `;
     heavyContent = lightContent;
     Object.entries(DAL.GetUnits(`battleSisters`)).forEach(([key, unit]) => {
         if (unit.type == `light`) {
@@ -70,6 +100,8 @@ $("#faction-background-container").hide();
 $("#faction-special-rules-container").hide();
 
 function ToggleUnitType(isLight) {
+    $("#faction-unit-display-light").toggle();
+    $("#faction-unit-display-heavy").toggle();
     $(".unit-type-descriptor").each(function(element) {
         $(this).empty();
         if (isLight) {
@@ -79,6 +111,8 @@ function ToggleUnitType(isLight) {
         }
     })
 }
+
+$("#faction-unit-display-heavy").hide();
 
 $("#unit-type-light-btn").click(() => {
     ToggleUnitType(true);

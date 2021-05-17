@@ -14,3 +14,12 @@ input[type=number] {
   width: 75%;
   margin: 10px auto;
 }
+
+.centered-4-5 {
+  width: 80%;
+  margin: 10px auto;
+}
+
+.unit-display {
+  width:96%;
+}
