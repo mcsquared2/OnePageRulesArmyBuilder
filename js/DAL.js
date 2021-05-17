@@ -1,6 +1,6 @@
 DAL = {
     GetFactions: function() {
-        return FACTIONS;
+        return Object.entries(FACTIONS);
     },
     GetFaction: function(factionId) {
         return FACTIONS[factionId];
