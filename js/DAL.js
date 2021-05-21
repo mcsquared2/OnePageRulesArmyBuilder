@@ -18,10 +18,10 @@ DAL = {
         return WEAPONS;
     },
     GetUnits: function (faction) {
-        units = {},
+        units = [],
         Object.entries(UNITS).forEach(([unitId, unit]) => {
             if (unit.faction == faction) {
-                units[unitId] = unit;
+                units.push(unit);
             }
         })
         return units;
@@ -34,5 +34,15 @@ DAL = {
             }
         });
         return tables;
+    },
+    GetPossibleArmyUnits: function(faction, showAll=false) {
+        units = this.GetUnits(faction);
+        if (showAll) {
+            this.GetFaction(faction).supplementalFactions.forEach( (sFaction) => {
+                units.concat(this.GetUnits(sFaction));
+            });
+            units.sort();
+        }
+        return units;
     }
 }

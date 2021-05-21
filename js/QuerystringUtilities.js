@@ -9,5 +9,8 @@ let QuerystingUtilities = {
             qstring += `${key}=${value}&`;
         });
         return qstring;
+    },
+    GetParam: function(param) {
+        return PARAMS.get(param);
     }
 }

@@ -1,7 +1,6 @@
 FACTIONS = {
     battleSisters: {
-        id: `battleSisters`, 
-        val: "battle-sisters", 
+        id: `battleSisters`,
         display: "Battle Sisters", 
     },
     // { val: "orc-marauders", display: "Orc Marauders"},
@@ -117,8 +116,8 @@ UPGRADE_TABLES = {
     },
 }
 
-UNITS= {
-    greaterHighSister: {
+UNITS= [
+    {
         faction: "battleSisters",
         type: "light",
         display: "Greater High Sister",
@@ -130,7 +129,7 @@ UNITS= {
         upgrades: [],
         cost: 305,
     },
-    battleSisters: {
+    {
         faction: `battleSisters`,
         type: "light",
         display: `Battle Sisters`,
@@ -142,7 +141,7 @@ UNITS= {
         upgrades: ["a", "e"],
         cost: 95,
     },
-    orcMob: {
+    {
         faction: `orcMarauders`,
         display: `Orc Mob`,
         size: 10,
@@ -153,7 +152,7 @@ UNITS= {
         upgrades: [`a`, `c`, `j`, `k`],
         cost: 155,
     },
-    organTank: {
+    {
         faction: "battleSisters",
         type: "heavy",
         display: "Organ Tank",
@@ -166,7 +165,7 @@ UNITS= {
         cost: 340,
 
     }
-},
+],
 
 WEAPONS = {
     pistols: {
