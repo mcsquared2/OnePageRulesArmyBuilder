@@ -1,19 +1,17 @@
-FACTIONS = {
-    battleSisters: {
+FACTIONS = [
+    {
         id: `battleSisters`,
         display: "Battle Sisters", 
     },
     // { val: "orc-marauders", display: "Orc Marauders"},
     // { val: "alien-hive", display: "Alien Hive"},
     // { val: "ratmen-clans", display: "Ratmen Clans"},
-};
+];
 
-PSYCHIC_SPELLS = {
+PSYCHIC_SPELLS = []
 
-}
-
-UPGRADE_TABLES = {
-    orcMaraudersA : {
+UPGRADE_TABLES = [
+    {
         type: 'light',
         faction: `orcMarauders`,
         table: `a`,
@@ -49,7 +47,7 @@ UPGRADE_TABLES = {
             }
         ]
     },
-    battleSistersLightA: {
+    {
         type: `light`,
         faction:`battleSisters`,
         table: `a`,
@@ -95,7 +93,7 @@ UPGRADE_TABLES = {
             }
         ]
     },
-    battleSistersHeavyA: {
+    {
         type: `heavy`,
         faction:`battleSisters`,
         table: `e`,
@@ -114,7 +112,7 @@ UPGRADE_TABLES = {
             }
         ]
     },
-}
+]
 
 UNITS= [
     {
@@ -167,29 +165,33 @@ UNITS= [
     }
 ],
 
-WEAPONS = {
-    pistols: {
+WEAPONS = [
+    {
+        id: "pistols",
         range: "12",
         attacks: 1,
         specialRules: [],
         display: "Pistols"
     },
-    heavyChainsawSword: {
+    {
+        id: "heavyChainsawSword",
         range: "melee",
         attacks: 6,
         specialRules: ["ap:1"],
         display: "Heavy Chainsaw Sword"
     },
-    fusionRifle: {
+    {
+        id: "fusionRifle",
         range: "12",
         attacks: 1,
         specialRules: ["ap:4", "deadly:6"],
         display: "Fusion Rifle"
     }
-}
+]
 
-SPECIAL_RULES = {
-    aircraft: {
+SPECIAL_RULES = [
+    {
+        id: "aircraft",
         faction: `general`,
         display: "Aircraft",
         description: `This model doesn’t interact
@@ -203,7 +205,8 @@ SPECIAL_RULES = {
         its activation ends and it may be placed
         back on any table edge.`
     },
-    ambush: {
+    {
+        id: "faction",
         faction: `general`,
         display: "Ambush",
         description: `This model may be kept in
@@ -214,41 +217,48 @@ SPECIAL_RULES = {
         Ambush they roll-off to see who deploys
         first, and then alternate in placing them.`
     },
-    antiAir: {
+    {
+        id: "antiAir",
         faction: `general`,
         display: "Anti-Air",
         description: `This unit doesn’t count as being
         an extra 12” away and doesn’t get -1 to
         shooting against aircraft.`
     },
-    ap: {
+    {
+        id: "ap",
         faction: `general`,
         display: `AP[x]`,
         description: `Targets get -[x] to Defense rolls
         when blocking hits.`
     },
-    blast: {
+    {
+        id: "blast",
         faction: `general`,
         display: `Blast[x]`,
         description: `All hits are multiplied by [x].`
     },
-    fast: {
+    {
+        id: "fast",
         faction: `general`,
         display: "Fast",
         description: "Allows this unit to assault with a 9 inch movement and charge with 18 inch movement",
     },
-    fear: {
+    {
+        id: "fear",
         faction: `general`,
         display: `Fear`,
         description: `Always counts as having dealt +D3
         wounds for seeing who won melee.`
     },
-    fearless: {
+    {
+        id: "fearless",
         faction: `general`,
         display: "Fearless",
         description: "This units gets +1 to all morale checks"
     },
-    hero: {
+    {
+        id: "hero",
         faction: `general`,
         display: `Hero`,
         description: `May be deployed as part of friendly
@@ -257,20 +267,23 @@ SPECIAL_RULES = {
         must use the defense value of the hero’s
         unit until all non-hero models are killed.`
     },
-    regeneration: {
+    {
+        id: "regeneration",
         faction: `general`,
         display: `Regeneration`,
         description: `When taking a wound, roll
         one die. On a 5+ it is ignored.`
     },
-    rending: {
+    {
+        id: "rending",
         faction: `general`,
         display: `Rending`,
         description: `Unmodified rolls of 6 to hit
         count as having AP(4) and ignore the
         regeneration rule.`
     },
-    tough: {
+    {
+        id: "tough",
         faction: `general`,
         display: `Tough[x]`,
         description: `This model must take [x]
@@ -284,7 +297,8 @@ SPECIAL_RULES = {
         model (heroes must still be assigned
         wounds last).`
     },
-    blindFaith: {
+    {
+        id: "blindFaith",
         faction: `battleSisters`,
         id: "blindFaith",
         name: "Blind Faith",
@@ -297,10 +311,11 @@ SPECIAL_RULES = {
         //     { name: "Aegis", value: 'enemies get -1 to melee hits'},
         // ]
     },
-    canticleMegaphone: {
+    {
+        id: "canticleMegaphone",
         faction: `battleSisters`,
         id: "canticleMegaphone",
         name: "Canticle Megaphone",
         description: "This model and her unit get the [fearless] rule."
     }
-};
+];
