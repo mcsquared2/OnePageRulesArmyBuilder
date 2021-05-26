@@ -122,7 +122,7 @@ UNITS= [
         size: 1,
         qua: 2,
         def: 2,
-        equipment: ["holyEnergySword", "flamesOfRetribution"],
+        equipment: ["holyEnergySword", "assaultRifle"],
         specialRules: ["ambush", "fear", "flying", "hero", "regeneration"],
         upgrades: [],
         cost: 305,
@@ -186,7 +186,42 @@ WEAPONS = [
         attacks: 1,
         specialRules: ["ap:4", "deadly:6"],
         display: "Fusion Rifle"
-    }
+    },
+    {
+        id: "holyEnergySword",
+        range:"0",
+        attacks: 6,
+        specialRules: [],
+        display: "Holy Energy Sword",
+    },
+    {
+        id: "organMortar",
+        range:"0",
+        attacks: 6,
+        specialRules: [],
+        display: "Organ Mortar",
+    },
+    {
+        id: "ccw[2]",
+        range:"0",
+        attacks: 2,
+        specialRules: [],
+        display: "CCW",
+    },
+    {
+        id: "assaultRifle",
+        range: "12",
+        attacks: 1,
+        specialRules: ["ap:4", "deadly:6"],
+        display: "Fusion Rifle"
+    },
+    {
+        id: "ccw",
+        range:"0",
+        attacks: 1,
+        specialRules: [],
+        display: "CCW",
+    },
 ]
 
 SPECIAL_RULES = [

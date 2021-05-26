@@ -29,11 +29,20 @@ function PopulatePossibleArmyUnits(faction) {
                 <div class="pure-u-1-4">S: ${unit.size}</div><div class="pure-u-1-4">Qua: ${unit.qua}</div><div class="pure-u-1-4">Def: ${unit.def}</div><div class="pure-u-1-4">C: ${unit.cost}</div>`;
         content += `<div class="pure-u-1"><h5>Equipment</h5>`;
         console.log(unit);
-        unit.equipment.forEach( (equipment) => {
-
+        unit.equipment.forEach( (equipmentId) => {
+            equipment = DAL.GetEquipment(equipmentId);
+            content += `
+                <div class="pure-u-1>${equipment.display}</div>
+                <div class="pure-u-1-2">${equipment.range}</div>
+                <div class="pure-u-1-2">${equipment.attacks}</div>
+                <div class="pure-u-1">`;
+            equipment.specialRules.forEach( (rule) => {
+                content += `<div class="pure-u-1-4">${rule.display}</div>s`
+            });
+            content += `<hr></div>`;
         });
         content += `</div><div class="pure-u-1"><h5>Special Rules</h5>`;
-        unit.specialRules.forEach( (rule) => {
+        unit.specialRules.forEach( (ruleId) => {
 
         });
         content += `</div></div>`;

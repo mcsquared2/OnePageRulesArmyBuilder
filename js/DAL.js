@@ -44,5 +44,12 @@ DAL = {
             units.sort();
         }
         return units;
+    },
+    GetEquipment: function (equipmentId) {
+        WEAPONS.forEach( (weapon) => {
+            if (weapon.id == equipmentId) {
+                return weapon;
+            }
+        })
     }
 }
