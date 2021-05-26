@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>One Page Rules Army Builder</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+
+    <div class="centered-4-5 pure-g">
+        <h2 id="faction-name-display" class="pure-u-1"></h2>
+        <div class="pure-u-1"><select id="army-faction-select" placeholder="Choose Faction"></select> <span>Max Points: </span><input type="number" id="army-cost-input"> <span>Points Spent:<span id="points-spent-display"></span></span><span>Points Left: <span id="points-left"></span></span></div>
+        <div class="pure-u-1-2">
+            <h3>Army List</h3>
+            <div id="army-list-display"></div>
+        </div>
+        <div class="pure-u-1-2">
+            <h3>Units</h3>
+            <div id="army-units-display" class="pure-g"></div>
+        </div>
+        
+
+        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- <script src="js/FormHelper.js"></script> -->
+    <script src="js/DataStub.js"></script>
+    <script src="js/DAL.js"></script>
+    <script src="js/QuerystringUtilities.js"></script>
+    <script src="js/army.js"></script>
+</body>
+</html>
