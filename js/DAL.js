@@ -46,10 +46,18 @@ DAL = {
         return units;
     },
     GetEquipment: function (equipmentId) {
-        WEAPONS.forEach( (weapon) => {
-            if (weapon.id == equipmentId) {
-                return weapon;
+        for ( i = 0; i < WEAPONS.length; i++) {
+            if (WEAPONS[i].id == equipmentId) {
+                return WEAPONS[i];
             }
-        })
+        }
+    }, 
+    GetRule: function (ruleId) {
+        for ( i= 0; i < SPECIAL_RULES.length; i++) {
+            if (SPECIAL_RULES[i].id == ruleId)
+            {
+                return SPECIAL_RULES[i]
+            }
+        }
     }
 }
