@@ -37,12 +37,10 @@ function PopulatePossibleArmyUnits(faction) {
                 <div class="pure-u-1-2">${equipment.range}</div>
                 <div class="pure-u-1-2">${equipment.attacks}</div>
                 <div class="pure-u-1">`;
-            equipment.specialRules.forEach( (ruleId) => {
-                rule  = DAL.GetRule(ruleId);
-                console.log("id: " + ruleId);
-                console.log("rule");
-                console.log(rule);
-                content += `<div class="pure-u-1-4">${rule}</div>`
+            equipment.specialRules.forEach( (rule) => {
+                keyword = GuiHelper.DisplayRuleKeyword(rule);
+                description = GuiHelper.DisplayRuleDescription(rule);
+                content += `<div class="pure-u-1-4">${keyword}</div>`;
             });
             content += `<hr></div>`;
         });

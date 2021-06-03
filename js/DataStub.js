@@ -146,7 +146,7 @@ UNITS= [
         qua: 4,
         def: 5,
         equipment: [`pistols`, `ccw[2]`],
-        specialRules: [`badShot`, `furious`],
+        specialRules: [{ id:`badShot`}, {id:`furious`}],
         upgrades: [`a`, `c`, `j`, `k`],
         cost: 155,
     },
@@ -158,7 +158,7 @@ UNITS= [
         qua: 4,
         def: 2,
         equipment: ["organMortar"],
-        specialRules: ["fast", "impact[6]", "tough[12]"],
+        specialRules: [{id:"fast"}, {id:"impact", X: 6}, {id:"tough", X:12}],
         upgrades: ["a", "c"],
         cost: 340,
 
@@ -177,14 +177,14 @@ WEAPONS = [
         id: "heavyChainsawSword",
         range: "melee",
         attacks: 6,
-        specialRules: ["ap:1"],
+        specialRules: [{id:"ap", X:1}],
         display: "Heavy Chainsaw Sword"
     },
     {
         id: "fusionRifle",
         range: "12",
         attacks: 1,
-        specialRules: ["ap:4", "deadly:6"],
+        specialRules: [{id:"ap", X:4}, {id:"deadly", X:6}],
         display: "Fusion Rifle"
     },
     {
@@ -212,8 +212,8 @@ WEAPONS = [
         id: "assaultRifle",
         range: "12",
         attacks: 1,
-        specialRules: ["ap:4", "deadly:6"],
-        display: "Fusion Rifle"
+        specialRules: [{id:"ap", X:4}, {id:"deadly", X:6}],
+        display: "Assault Rifle"
     },
     {
         id: "ccw",
@@ -263,14 +263,14 @@ SPECIAL_RULES = [
     {
         id: "ap",
         faction: `general`,
-        display: `AP[x]`,
+        display: `AP [x]`,
         description: `Targets get -[x] to Defense rolls
         when blocking hits.`
     },
     {
         id: "blast",
         faction: `general`,
-        display: `Blast[x]`,
+        display: `Blast [x]`,
         description: `All hits are multiplied by [x].`
     },
     {
@@ -320,7 +320,7 @@ SPECIAL_RULES = [
     {
         id: "tough",
         faction: `general`,
-        display: `Tough[x]`,
+        display: `Tough [x]`,
         description: `This model must take [x]
         wounds before being killed. If a model
         with tough joins a unit without it, then it
