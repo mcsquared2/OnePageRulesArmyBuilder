@@ -58,6 +58,7 @@ DAL = {
             {
                 return SPECIAL_RULES[i]
             }
-        }
+        } 
+        return {};
     }
 }

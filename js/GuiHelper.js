@@ -1,8 +1,8 @@
 GuiHelper = {
     DisplayRuleKeyword: function (rule) {
-        ruleDisplay = DAL.GetRule(rule.id).display
+        ruleDisplay = DAL.GetRule(rule.id).display;
         if (rule.X) {
-            ruleDisplay.replace("[x]", rule.X);
+            ruleDisplay = ruleDisplay.replace("[x]", rule.X);
         }
         return ruleDisplay
     },

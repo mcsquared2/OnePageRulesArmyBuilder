@@ -274,6 +274,12 @@ SPECIAL_RULES = [
         description: `All hits are multiplied by [x].`
     },
     {
+        id: "deadly",
+        faction: "general",
+        display: `Deadly [x]`,
+        description: `All wounds are multiplied by [x]`,
+    },
+    {
         id: "fast",
         faction: `general`,
         display: "Fast",
