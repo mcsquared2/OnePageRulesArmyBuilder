@@ -35,13 +35,16 @@ function PopulatePossibleArmyUnits(faction) {
             equipment.specialRules.forEach( (rule) => {
                 keyword = GuiHelper.DisplayRuleKeyword(rule);
                 description = GuiHelper.DisplayRuleDescription(rule);
-                content += `<div class="pure-u-1-4 tooltip">${keyword}<span class="tooltiptext">${description}</span></div>`;
+                content += GuiHelper.CreateToolTip("pure-u-1-4", keyword, description);
             });
             content += `<hr></div>`;
         });
         content += `</div><div class="pure-u-1"><h5>Special Rules</h5>`;
-        unit.specialRules.forEach( (ruleId) => {
-
+        unit.specialRules.forEach( (rule) => {
+            console.log(rule);
+            keyword = GuiHelper.DisplayRuleKeyword(rule);
+            description = GuiHelper.DisplayRuleDescription(rule);
+            content += GuiHelper.CreateToolTip("pure-u-1-4", keyword, description);
         });
         content += `</div></div>`;
     });

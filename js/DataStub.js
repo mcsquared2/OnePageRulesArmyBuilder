@@ -123,7 +123,7 @@ UNITS= [
         qua: 2,
         def: 2,
         equipment: ["holyEnergySword", "assaultRifle"],
-        specialRules: ["ambush", "fear", "flying", "hero", "regeneration"],
+        specialRules: [{id:"ambush"}, {id:"fear"}, {id:"hero"}, {id:"regeneration"}],
         upgrades: [],
         cost: 305,
     },
@@ -241,7 +241,7 @@ SPECIAL_RULES = [
         back on any table edge.`
     },
     {
-        id: "faction",
+        id: "ambush",
         faction: `general`,
         display: "Ambush",
         description: `This model may be kept in
@@ -309,6 +309,12 @@ SPECIAL_RULES = [
         unit until all non-hero models are killed.`
     },
     {
+        id: `impact`,
+        faction: `general`,
+        display: `Impact [x]`,
+        description: `After this unit has charged, deal [x] wounds to the charged unit.`
+    },
+    {
         id: "regeneration",
         faction: `general`,
         display: `Regeneration`,
@@ -342,7 +348,7 @@ SPECIAL_RULES = [
         id: "blindFaith",
         faction: `battleSisters`,
         id: "blindFaith",
-        name: "Blind Faith",
+        display: "Blind Faith",
         description: "When the hero and her unit are activated pick one of the following devotions, and they get one of these special rules until the end of the round:<br>&bull; <strong>Passion</strong>: +3\" when moving<br>&bull; <strong>Guidance</strong>: AP(+1) when shooting.<br>&bull; <strong>Spirit</strong>: AP(+1) when in melee.<br>&bull; <strong>Aegis</strong>: enemies get -1 to melee hits"
         // description: "When the hero and her unit are activated pick one of the following devotions, and they get one of these special rules until the end of the round:[subdescription]",
         // subdescriptions: [
@@ -356,7 +362,7 @@ SPECIAL_RULES = [
         id: "canticleMegaphone",
         faction: `battleSisters`,
         id: "canticleMegaphone",
-        name: "Canticle Megaphone",
+        display: "Canticle Megaphone",
         description: "This model and her unit get the [fearless] rule."
     }
 ];

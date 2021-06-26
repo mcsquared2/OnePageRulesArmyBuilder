@@ -7,6 +7,12 @@ GuiHelper = {
         return ruleDisplay
     },
     DisplayRuleDescription: function (rule) {
-        return DAL.GetRule(rule.id).description.replaceAll("[x]", rule.X);
+        description = DAL.GetRule(rule.id).description;
+        if (rule.X) 
+            description = description.replaceAll("[x]", rule.X);
+        return description;
+    },
+    CreateToolTip(puresize, content, tooltip) {
+        return `<div class="${puresize} tooltip">${content}<span class="tooltiptext">${tooltip}</span></div>`
     }
 }
