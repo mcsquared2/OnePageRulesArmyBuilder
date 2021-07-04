@@ -12,7 +12,6 @@ PSYCHIC_SPELLS = []
 
 UPGRADE_TABLES = [
     {
-        type: 'light',
         faction: `orcMarauders`,
         table: `a`,
         sections: [
@@ -48,7 +47,6 @@ UPGRADE_TABLES = [
         ]
     },
     {
-        type: `light`,
         faction:`battleSisters`,
         table: `a`,
         sections: [
@@ -94,7 +92,6 @@ UPGRADE_TABLES = [
         ]
     },
     {
-        type: `heavy`,
         faction:`battleSisters`,
         table: `e`,
         sections: [
