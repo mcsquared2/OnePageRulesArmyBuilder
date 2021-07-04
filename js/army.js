@@ -30,22 +30,33 @@ function PopulatePossibleArmyUnits(faction) {
         unit.equipment.forEach( (equipmentId) => {
             equipment = DAL.GetEquipment(equipmentId);
             content += `
-                <div class="pure-u-1-2">${equipment.display}</div><div class="pure-u-1-4">${equipment.range}</div><div class="pure-u-1-4">${equipment.attacks}</div>
-                <div class="pure-u-1">`;
+                <div class="pure-u-1">${equipment.display}</div><div class="pure-u-1-4">${GuiHelper.GetRangeString(equipment.range)}</div><div class="pure-u-1-4">${GuiHelper.GetAttackString(equipment.attacks)}</div>`;
             equipment.specialRules.forEach( (rule) => {
                 keyword = GuiHelper.DisplayRuleKeyword(rule);
                 description = GuiHelper.DisplayRuleDescription(rule);
-                content += GuiHelper.CreateToolTip("pure-u-1-4", keyword, description);
+                keywordSize = "pure-u-1-4";
+                if (keyword.length > 10) {
+                    keywordSize = "pure-u-1-3";
+                }
+                content += GuiHelper.CreateToolTip(keywordSize, keyword, description);
             });
-            content += `<hr></div>`;
+            content += `<hr>`;
         });
         content += `</div><div class="pure-u-1"><h5>Special Rules</h5>`;
         unit.specialRules.forEach( (rule) => {
             console.log(rule);
             keyword = GuiHelper.DisplayRuleKeyword(rule);
             description = GuiHelper.DisplayRuleDescription(rule);
-            content += GuiHelper.CreateToolTip("pure-u-1-4", keyword, description);
+            keywordSize = "pure-u-1-4";
+            if (keyword.length > 10) {
+                keywordSize = "pure-u-1-3";
+            }
+            content += GuiHelper.CreateToolTip(keywordSize, keyword, description);
         });
+        content += `<hr><div class="pure-u-1"><h5>Upgrades</h5></div>`
+        unit.upgrades.forEach( (upgradeKey) => {
+
+        })
         content += `</div></div>`;
     });
     content += `</div>`;

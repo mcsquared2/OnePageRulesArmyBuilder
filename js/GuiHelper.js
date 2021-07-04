@@ -14,5 +14,14 @@ GuiHelper = {
     },
     CreateToolTip(puresize, content, tooltip) {
         return `<div class="${puresize} tooltip">${content}<span class="tooltiptext">${tooltip}</span></div>`
+    },
+    GetRangeString(range) {
+        if (range == 0) {
+            return "Melee";
+        }
+        return range.toString() + "\"";
+    },
+    GetAttackString(attacks) {
+        return "A" + attacks.toString();
     }
 }
